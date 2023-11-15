@@ -20,7 +20,7 @@ class MoviesController < ApplicationController
     n = Movie.new
     n.title = params.fetch("query_title")
     n.year = params.fetch("query_year")
-    n.duation = params.fetch("query_duration")
+    n.duration = params.fetch("query_duration")
     n.description = params.fetch("query_description")
     n.image = params.fetch("query_image")
     n.director_id = params.fetch("query_director_id")
@@ -28,6 +28,8 @@ class MoviesController < ApplicationController
     n.save
 
     redirect_to("/movies")
+
+ 
   end
 
 end
