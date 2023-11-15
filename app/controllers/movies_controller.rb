@@ -37,7 +37,8 @@ class MoviesController < ApplicationController
      matching_records = Movie.where({ :id => the_id })
      the_movie = matching_records.at(0)
      the_movie.destroy
-     
+     redirect_to("/movies")
+
 
   end
 
