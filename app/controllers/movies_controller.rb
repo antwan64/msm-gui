@@ -25,6 +25,7 @@ class MoviesController < ApplicationController
     n.image = params.fetch("query_image")
     n.director_id = params.fetch("query_director_id")
 
+
     n.save
 
     redirect_to("/movies")
