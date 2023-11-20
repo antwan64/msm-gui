@@ -17,7 +17,7 @@
       Title
     </label>
 
-    <input type="text" id="title_box" name="query_title">
+    <input type="text" id="title_box" name="query_title" value="<%= @the_movie.title  %>">
   </div>
 
   <div>
@@ -25,7 +25,7 @@
       Year
     </label>
 
-    <input type="text" id="year_box" name="query_year">
+    <input type="text" id="year_box" name="query_year" value="<%= @the_movie.year  %>">
   </div>
 
   <div>
@@ -33,7 +33,7 @@
       Duration
     </label>
 
-    <input type="text" id="duration_box" name="query_duration">
+    <input type="text" id="duration_box" name="query_duration" value="<%= @the_movie.duration  %>">
   </div>
 
   <div>
@@ -41,7 +41,7 @@
       Description
     </label>
 
-    <textarea id="description_box" name="query_description" rows="3"></textarea>
+    <textarea id="description_box" name="query_description" rows="3"><%= @the_movie.description %></textarea>
   </div>
 
   <div>
@@ -49,7 +49,7 @@
       Image
     </label>
 
-    <input type="text" id="image_box" name="query_image">
+    <input type="text" id="image_box" name="query_image" value="<%= @the_movie.image  %>">
   </div>
 
   <div>
@@ -57,7 +57,7 @@
       Director ID
     </label>
 
-    <input type="text" id="director_id_box" name="query_director_id">
+    <input type="text" id="director_id_box" name="query_director_id" value="<%= @the_movie.director_id  %>">
   </div>
 
   <button>

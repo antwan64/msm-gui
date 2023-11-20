@@ -5,7 +5,85 @@
 <a href="/actors">
   Go back
 </a>
+<div>
+  <a href="/delete_actor/<%= @the_actor.id %>">
+    Delete actor
+  </a>
+</div>
+<hr>
+<form action="/modify_actor/<%= @the_actor.id %>" method="post">
+  <div>
+    <label for="name_box">
+      Name
+    </label>
 
+    <input type="text" id="name_box" name="query_name" value="<%= @the_actor.name  %>">
+  </div>
+
+  <div>
+    <label for="dob_box">
+      Dob
+    </label>
+
+    <input type="text" id="dob_box" name="query_dob" value="<%= @the_actor.dob  %>">
+  </div>
+
+
+
+  <div>
+    <label for="bio_box">
+      Bio
+    </label>
+
+    <textarea id="bio_box" name="query_bio" rows="3"><%= @the_actor.bio %></textarea>
+  </div>
+
+  <div>
+    <label for="image_box">
+      Image
+    </label>
+
+    <input type="text" id="image_box" name="query_image" value="<%= @the_actor.image  %>">
+  </div>
+
+
+
+  <button>
+    Update actor
+  </button>
+</form>
+
+<hr>
+
+<dl>
+  <dt>
+    Name
+  </dt>
+  <dd>
+    <%= @the_actor.name %>
+  </dd>
+
+  <dt>
+    Dob
+  </dt>
+  <dd>
+    <%= @the_actor.dob %>
+  </dd>
+
+
+  <dt>
+    Description
+  </dt>
+  <dd>
+    <%= @the_actor.description %>
+  </dd>
+
+  <dt>
+    Image
+  </dt>
+  <dd>
+    <img src="<%= @the_actor.image %>" style="width:250px;">
+  </dd>
 <hr>
 
 <dl>
@@ -87,19 +165,19 @@
 
     <% matching_movies = Movie.where({ :id => m_id }) %>
 
-    <% the_movie = matching_movies.at(0) %>
+    <% the_actor = matching_movies.at(0) %>
 
     <tr>
       <td>
-        <%= the_movie.title %>
+        <%= the_actor.title %>
       </td>
 
       <td>
-        <%= the_movie.year %>
+        <%= the_actor.year %>
       </td>
 
       <td>
-        <% d_id = the_movie.director_id %>
+        <% d_id = the_actor.director_id %>
         
         <% matching_directors = Director.where({ :id => d_id }) %>
         
@@ -113,7 +191,7 @@
       </td>
 
       <td>
-        <a href="/movies/<%= the_movie.id %>">
+        <a href="/movies/<%= the_actor.id %>">
           Show details
         </a>
       </td>
