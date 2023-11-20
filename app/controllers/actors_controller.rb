@@ -47,7 +47,6 @@ class ActorsController < ApplicationController
     matching_records = Actor.where({ :id => the_id})
     the_actor = matching_records.at(0)
 
-    the_actor = Actor.new
     the_actor.name = params.fetch("query_name")
     the_actor.dob = params.fetch("query_dob") 
     the_actor.bio = params.fetch("query_bio")
